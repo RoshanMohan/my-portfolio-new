@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Updating Site</title>
-    <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #fff; }
-        .box { text-align: center; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roshan Mohan | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/templatemo-axis-industrial.css">
+<link rel="stylesheet" href="css/templatemo-axis-main-page.css">
+<style>
+    /* Custom styles for logo, hero image, and expansion logic */
+    .header__logo-mark img { height: 35px; width: auto; object-fit: contain; }
+    .hero-image { filter: grayscale(100%); width: 200px; height: auto; margin-bottom: 20px; transition: filter 0.3s; }
+    .hero-image:hover { filter: grayscale(0%); }
+    .hero__title { font-size: 2.5rem !important; } /* Smaller font for new headline */
+    
+    /* Expandable Grid Logic */
+    .bento-card { cursor: pointer; transition: all 0.4s ease; position: relative; }
+    .bento-card.expanded { 
+        position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; 
+        z-index: 1000; background: white; border: 2px solid #000; 
+        padding: 40px; box-shadow: 0 0 50px rgba(0,0,0,0.5); 
+    }
+    .close-btn { display: none; background: #FF3E00; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-top: 20px; }
+    .bento-card.expanded .close-btn { display: inline-block; }
+</style>
 </head>
 <body>
 
@@ -14,113 +32,59 @@
         <div class="header__left">
             <a href="index.html" class="header__logo">
                 <span class="header__logo-mark">
-                    <img src="assets/logo.png" alt="Logo" style="height: 35px; width: auto; display: block;">
+                    <img src="assets/logo.png" alt="Logo">
                 </span>
-                Roshan Mohan
+                Portfolio
             </a>
         </div>
         <nav class="header__nav" id="headerNav">
             <a href="#about" class="active">About</a>
             <a href="#work">Work</a>
-            <a href="#berkeley">Berkeley</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
         </nav>
-        <div class="header__right">
-            <div class="header__status"><span class="header__status-dot"></span><span>Open to work</span></div>
-        </div>
         <button class="header__burger" id="headerBurger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     </div>
 </header>
 
 <section class="hero" id="about">
     <div class="hero__grid hero__grid--dense" aria-hidden="true"></div>
-    
     <div class="hero-image-wrapper">
-        <img src="assets/hero_shot.jpg" alt="Roshan Mohan" class="hero-image">
+        <img src="assets/hero_shot.png" alt="Roshan Mohan" class="hero-image">
     </div>
-
-    <div class="hero__label reveal">Hardware Engineer</div>
+    <div class="hero__label reveal">Roshan Mohan</div>
     <h1 class="hero__title">
-        <span class="line">I love pushing the limits of what's feasible</span>
+        <span class="line">I love pushing the boundaries of what is considered feasible</span>
     </h1>
     <div class="hero__bottom">
-        <p class="hero__desc reveal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+        <p class="hero__desc reveal">I'm currently a Sr Hardware Test Engineer at Tesla, previously a Sr Design Engineer at Nunam. Graduated from the Master of Design program at UC Berkeley. 
+            Currently this portfolio is under development, feel free to connect on LinkedIn.  </p>
+        <div class="hero__stats reveal" style="display: flex; gap: 20px;">
+            <a href="https://www.linkedin.com/in/roshan-mohan/" target="_blank" class="tag tag--filled" style="padding: 10px 20px;">LinkedIn</a>
+            <a href="assets/resume.pdf" target="_blank" class="tag tag--safety" style="padding: 10px 20px;">View Resume</a>
+        </div>
     </div>
 </section>
 
 <section class="section" id="work">
     <div class="container">
         <div class="section__header reveal">
-            <div class="section__eyebrow">// Experience</div>
             <h2 class="section__title">Selected Works</h2>
         </div>
         <div class="bento__grid">
-            <div class="bento-card bento-card--wide reveal">
+            <div class="bento-card bento-card--wide reveal" onclick="this.classList.add('expanded')">
                 <div class="bento-card__number">01</div>
-                <div><h3 class="bento-card__title">Past Job Title A</h3><p class="bento-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div><h3 class="bento-card__title">Reimagining Manufacturing, Master's Thesis</h3><p class="bento-card__text">Click to expand, details coming soon.</p></div>
+                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
             </div>
-            <div class="bento-card bento-card--mid reveal">
+            <div class="bento-card bento-card--mid reveal" onclick="this.classList.add('expanded')">
                 <div class="bento-card__number">02</div>
-                <div><h3 class="bento-card__title">Past Job Title B</h3><p class="bento-card__text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+                <div><h3 class="bento-card__title">Energy Storage Systems @ Nunam</h3><p class="bento-card__text">Click to expand. Detailed content coming soon</p></div>
+                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
             </div>
-            <div class="bento-card bento-card--mid reveal">
+            <div class="bento-card bento-card--mid reveal" onclick="this.classList.add('expanded')">
                 <div class="bento-card__number">03</div>
-                <div><h3 class="bento-card__title">Past Job Title C</h3><p class="bento-card__text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+                <div><h3 class="bento-card__title">Respiraid</h3><p class="bento-card__text">Click to expand. Detailed content about coming soon.</p></div>
+                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="berkeley">
-    <div class="container">
-        <div class="section__header reveal">
-            <div class="section__eyebrow">// Academic</div>
-            <h2 class="section__title">Berkeley Projects</h2>
-        </div>
-        <div class="bento__grid">
-            <div class="bento-card reveal">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/k_SdmAnYrMw?rel=0&modestbranding=1" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="bento-card reveal">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/pFvQo52C9JM?rel=0&modestbranding=1" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="bento-card reveal">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/F694hC_SZec?rel=0&modestbranding=1" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="bento-card reveal">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/IHnA0ZVbcRo?rel=0&modestbranding=1" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="gallery">
-    <div class="container">
-        <div class="stack__header reveal">
-            <div><div class="section__eyebrow">// Photography</div><h2 class="section__title">Project Gallery</h2></div>
-        </div>
-        <article class="stack__card reveal">
-            <div class="stack__card-left"><div class="stack__card-step">01</div></div>
-            <div class="stack__card-right"><h3 class="stack__card-title">Project Name</h3><p class="stack__card-text">Lorem ipsum placeholder text for project description.</p></div>
-        </article>
-        </div>
-</section>
-
-<section class="section" id="contact">
-    <div class="container" style="text-align: center;">
-        <h2 class="section__title">Let's Connect</h2>
-        <div class="about__links" style="margin-top: 2rem;">
-            <a href="URL_TO_LINKEDIN" target="_blank" class="tag tag--filled">LinkedIn</a>
-            <a href="assets/resume.pdf" target="_blank" class="tag tag--safety">View Resume</a>
         </div>
     </div>
 </section>
@@ -131,5 +95,8 @@
             <span class="footer__copy">&copy; 2026 Roshan Mohan.</span>
         </div>
     </div>
+</footer>
+
+<script src="js/templatemo-axis-script.js"></script>
 </body>
 </html>
