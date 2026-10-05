@@ -29,10 +29,11 @@
 
 <section class="hero" id="about">
     <div class="hero__grid" aria-hidden="true"></div>
+    <svg class="hero__boundary" aria-hidden="true"></svg>
     <div class="container hero__inner">
         <img src="assets/images/hero_shot.png" alt="Roshan Mohan" class="hero__photo">
         <div class="hero__label">Roshan Mohan</div>
-        <h1 class="hero__title">I love pushing the boundaries of what is considered feasible</h1>
+        <h1 class="hero__title">I love pushing the boundaries of what is considered feasible<span class="hero__dim" aria-hidden="true"></span></h1>
         <div class="hero__bottom">
             <p class="hero__desc">I'm currently a Sr Hardware Test Engineer at Tesla, previously a Sr Design Engineer at Nunam. Graduated from the Master of Design program at UC Berkeley.</p>
             <div class="hero__actions">
@@ -51,7 +52,7 @@
         <div class="work__grid">
 
             <!-- WORK 01: THESIS -->
-            <article class="work-card work-card--wide reveal" tabindex="0" role="button" aria-label="Open project: How We May Make">
+            <article class="work-card reveal" tabindex="0" role="button" aria-label="Open project: How We May Make">
                 <div class="work-card__summary">
                     <div>
                         <h3 class="work-card__title">How We May Make | Master's Thesis</h3>
@@ -124,27 +125,45 @@
                             <div class="video-wrapper">
                                 <iframe src="https://www.youtube.com/embed/9XdsboJ6wTw?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                             </div>
-                            <img src="assets/images/nunam/grid_1.jpg" class="popup-img" alt="BESS Architecture">
-                            <img src="assets/images/nunam/grid_2.jpg" class="popup-img" alt="Client Deployments">
+                            <figure class="popup-figure">
+                                <img src="assets/images/nunam/ness5_series.png" class="popup-img popup-img--full" alt="NESS Series 5 module specifications: 5 kWh, 2 kW continuous power, 75 kg, stackable up to 50 kWh" loading="lazy">
+                                <figcaption>NESS Series 5: 5 kWh modules that stack up to 50 kWh</figcaption>
+                            </figure>
+                            <img src="assets/images/nunam/ness5_installation_1.png" class="popup-img popup-img--square" alt="Six NESS Series 5 modules stacked and wired in an installation" loading="lazy">
+                            <img src="assets/images/nunam/pack_wiring.jpg" class="popup-img popup-img--square" alt="Wiring the electronics inside a battery pack prototype" loading="lazy">
+                            <figure class="popup-figure">
+                                <img src="assets/images/nunam/ness5_installation_2.png" class="popup-img popup-img--full" alt="A bank of ten NESS Series 5 modules installed side by side" loading="lazy">
+                                <figcaption>NESS Series 5 installations</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <img src="assets/images/nunam/audi_pack.png" class="popup-img popup-img--full" alt="Second-life battery pack on display with the Audi Environmental Foundation, pack assembly, and the e-rickshaw at its charging station" loading="lazy">
+                                <figcaption>Second-life battery pack built from Audi e-tron modules, with the Audi Environmental Foundation</figcaption>
+                            </figure>
                         </div>
 
                         <div class="popup-body">
                             <h2>Energy Storage Systems @ Nunam</h2>
+                            <p class="tag tag--filled">Sr Design Engineer | Nunam</p>
+
+                            <p>
+                                Nunam is on a mission to give used lithium-ion batteries a second life, converting them into energy storage systems that extend their lifespan, use resources more efficiently, and reduce electronic waste.
+                            </p>
 
                             <p class="lead-text">
                                 I led the mechanical design and scaling for 2 BESS platforms using second-life lithium-ion batteries. I also worked on multiple projects for major enterprise clients including <strong>Audi</strong>, <strong>Asahi Kasei Corporation</strong>, and <strong>Tata Motors</strong>.
                             </p>
 
-                            <h3>Core Platforms &amp; Deliverables</h3>
+                            <p>
+                                The core platform was NESS Series 5, a modular energy storage system built on a scalable 48V architecture. I optimized it for high-current interconnect durability and thermal stability, and configured it for rapid vertical stacking from 5 kWh to 50 kWh, so it fits space-constrained commercial UPS and residential environments.
+                            </p>
 
-                            <h4>// NESS Series 5 | Modular Energy Storage</h4>
-                            <p>Designed a scalable, 48V modular architecture optimizing high-current interconnect durability and thermal stability. Configured for rapid vertical stacking (5 kWh to 50 kWh) in space-constrained commercial UPS and residential environments.</p>
+                            <p>
+                                For Audi, I engineered a structural, ruggedized e-rickshaw battery pack using repurposed Audi e-tron VDA modules. I optimized its mechanical volume and structural load paths to endure the high-frequency vibrations and extreme 40°C+ environments typical of Indian infrastructure.
+                            </p>
 
-                            <h4>// E-Rickshaw Battery Pack (for Audi)</h4>
-                            <p>Engineered a structural, ruggedized battery pack using repurposed Audi e-tron VDA modules. Optimized mechanical volume and structural load paths to endure high-frequency vibrations and extreme 40°C+ environments typical of Indian infrastructure.</p>
-
-                            <h4>// Portable Power Banks for Street Vendors (for Audi)</h4>
-                            <p>Developed mobile, second-life energy storage units designed to replace hazardous small-scale fossil fuel generators. Focused on ruggedization, intuitive user interfaces, and modular servicing for micro-entrepreneurs in outdoor environments.</p>
+                            <p>
+                                Also for Audi, I developed portable second-life power banks for street vendors, designed to replace hazardous small-scale fossil fuel generators. The focus was on ruggedization, intuitive user interfaces, and modular servicing for micro-entrepreneurs working outdoors.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -210,6 +229,56 @@
                                 <li><a href="https://www.wevolver.com/article/a.note.to.the.amazing.maker.community.trying.to.put.together.a.diy.mechanical.ventilator" target="_blank" rel="noopener" class="inline-link">My article about DIY ventilators for COVID in Wevolver ↗</a></li>
                                 <li><a href="assets/docs/respiraid_patent_US20200261672A1.pdf" target="_blank" class="inline-link">Patent US20200261672A1 (PDF) ↗</a></li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WORK 04: OTHER STUFF -->
+            <article class="work-card reveal" tabindex="0" role="button" aria-label="Open project: Other Stuff I Made">
+                <div class="work-card__summary">
+                    <div>
+                        <h3 class="work-card__title">Other Stuff I Made</h3>
+                        <p class="work-card__text">Lamps, furniture, gadgets &amp; side projects</p>
+                    </div>
+                    <img src="assets/images/others/thumb.jpg" class="work-card__thumb" alt="">
+                </div>
+
+                <div class="work-card__detail">
+                    <button class="close-btn tag tag--safety">Close</button>
+
+                    <div class="popup-gallery">
+                        <div class="popup-body">
+                            <h2>Other Stuff I Made</h2>
+                            <p class="tag tag--filled">Side Projects</p>
+                            <p>A short introduction to these projects goes here.</p>
+                        </div>
+
+                        <div class="collage">
+                            <figure class="popup-figure">
+                                <video src="assets/images/others/lamp_revamp.mp4" poster="assets/images/others/lamp_revamp_poster.jpg" muted loop playsinline controls preload="none" data-autoplay aria-label="Motorized desk lamp controlled from a phone"></video>
+                                <figcaption>Lamp Revamp: An unnecessarily over-engineered desk lamp</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <img src="assets/images/others/prism.png" alt="Wooden triangular sculpture with a suspended metal prism" loading="lazy">
+                                <figcaption>Prism: Woodworking experiments with joinery</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <video class="collage__compact" src="assets/images/others/charging_dock.mp4" poster="assets/images/others/charging_dock_poster.jpg" muted loop playsinline controls preload="none" data-autoplay aria-label="Battery pack charging on a dock"></video>
+                                <figcaption>Powerbank and Dock: For Audi Greentech Event Guests, made with second-life cells</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <video src="assets/images/others/pix_a_sketch.mp4" poster="assets/images/others/pix_a_sketch_poster.jpg" muted loop playsinline controls preload="none" data-autoplay aria-label="Drawing on an LED matrix with two knobs"></video>
+                                <figcaption>Pix-a-Sketch: A digital etch-a-sketch</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <img src="assets/images/others/planter.png" alt="Wooden plant stand holding a pothos" loading="lazy">
+                                <figcaption>Planter: Woodworking Project</figcaption>
+                            </figure>
+                            <figure class="popup-figure">
+                                <video src="assets/images/others/hesat.mp4" poster="assets/images/others/hesat_poster.jpg" muted loop playsinline controls preload="none" data-autoplay aria-label="Minimal LED desk lamp lighting an apple"></video>
+                                <figcaption>Hesat: Nutrition tracker scale. Camera senses food placed on the scale and helps users track their macros with the help of a multimodal AI. Project for Designing Emerging Technologies class.</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>

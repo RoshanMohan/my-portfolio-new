@@ -260,6 +260,40 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
+/* "The boundary": engineering-drawing arc whose radius is the headline (drawn by js/main.js) */
+.hero__boundary {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.boundary__arc {
+    fill: none;
+    stroke: var(--safety);
+    stroke-width: 1.5;
+    transition: stroke 1.2s ease;
+}
+
+/* Once pushed, the new boundary settles into a very light grey */
+.hero__boundary.is-pushed .boundary__arc { stroke: #DDDDDD; }
+
+.boundary__ghost {
+    fill: none;
+    stroke: var(--ink);
+    stroke-opacity: 0.3;
+    stroke-width: 1;
+    stroke-dasharray: 6 4;
+}
+
+.boundary__mark {
+    stroke: var(--ink);
+    stroke-opacity: 0.6;
+    stroke-width: 1;
+}
+
 .hero__photo {
     width: 200px;
     height: auto;
@@ -297,7 +331,45 @@ h1, h2, h3, h4 {
     animation: heroTilt linear both;
     animation-timeline: scroll();
     animation-range: 0vh 55vh;
+    position: relative;
 }
+
+/* Dash-dot underline = the radius of the boundary arc. Width is set by js/main.js;
+   it's part of the headline, so it tilts with it. */
+.hero__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: var(--underline-width, 0);
+    height: 1px;
+    background: repeating-linear-gradient(90deg,
+        rgba(0,0,0,0.35) 0 14px, transparent 14px 18px,
+        rgba(0,0,0,0.35) 18px 20px, transparent 20px 24px);
+}
+
+/* Dimension arrow from the old boundary to the pushed one, on the same line as the
+   underline so it tilts with the headline. Length/opacity are set by js/main.js. */
+.hero__dim {
+    position: absolute;
+    left: var(--underline-width, 0);
+    bottom: -10px;
+    width: var(--boundary-stretch, 0px);
+    height: 1px;
+    background: var(--safety);
+    opacity: var(--boundary-pushed, 0);
+}
+
+.hero__dim::before,
+.hero__dim::after {
+    content: '';
+    position: absolute;
+    top: -2.5px;
+    border-block: 3px solid transparent;
+}
+
+.hero__dim::before { left: 0; border-right: 5px solid var(--safety); }
+.hero__dim::after { right: 0; border-left: 5px solid var(--safety); }
 
 @keyframes heroTilt {
     from { transform: rotate(0deg); opacity: 1; }
@@ -348,7 +420,8 @@ h1, h2, h3, h4 {
     gap: var(--gap);
 }
 
-.work-card--wide { grid-column: 1 / -1; }
+/* Every row of cards matches the tallest card */
+.work__grid { grid-auto-rows: 1fr; }
 
 .work-card {
     border: var(--border);
@@ -483,6 +556,9 @@ h1, h2, h3, h4 {
     height: auto;
 }
 
+/* Square pair, side by side */
+.popup-img--square { aspect-ratio: 1 / 1; }
+
 /* Full-width box for tall images, shown whole on white */
 .popup-img--boxed { aspect-ratio: 4 / 3; }
 
@@ -563,6 +639,39 @@ h1, h2, h3, h4 {
 }
 
 .popup-refs li { margin-bottom: 0.4rem; }
+
+
+/* Gallery popup: intro on top, collage of photos and videos below */
+.popup-gallery {
+    clear: both;
+    padding-top: 1rem;
+}
+
+.collage {
+    columns: 3 240px;
+    column-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.collage .popup-figure {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+}
+
+/* Shorter crop for very tall media (e.g. vertical phone clips) */
+.collage .collage__compact {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.collage img,
+.collage video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--hair);
+    background: var(--surface);
+}
 
 
 /* ----- 9. FOOTER ----- */
