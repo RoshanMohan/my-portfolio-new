@@ -4,62 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roshan Mohan | Portfolio</title>
+<meta name="description" content="Roshan Mohan — hardware design and test engineer. Selected works in sustainable manufacturing, energy storage and medical devices.">
+<link rel="icon" href="assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/templatemo-axis-industrial.css">
-<link rel="stylesheet" href="css/templatemo-axis-main-page.css">
-<style>
-    /* Custom  styles for logo, hero image, and expansion logic */
-    .header__logo-mark img { height: 35px; width: auto; object-fit: contain; }
-    .hero-image { filter: grayscale(100%); width: 200px; height: auto; margin-bottom: 20px; transition: filter 0.3s; }
-    .hero-image:hover { filter: grayscale(0%); }
-    .hero__title { font-size: 2.5rem !important; } /* Smaller font for new headline */
-    
-    /* Expandable Grid Logic */
-    .bento-card { cursor: pointer; transition: all 0.4s ease; position: relative; }
-    .bento-card.expanded { 
-        position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; 
-        z-index: 1000; background: white; border: 2px solid #000; 
-        padding: 40px; box-shadow: 0 0 50px rgba(0,0,0,0.5); 
-    }
-    .close-btn { display: none; background: #FF3E00; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-top: 20px; }
-    .bento-card.expanded .close-btn { display: inline-block; }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="header">
     <div class="header__inner">
-        <div class="header__left">
-            <a href="index.html" class="header__logo">
-                <span class="header__logo-mark">
-                    <img src="assets/logo.png" alt="Logo">
-                </span>
-                Portfolio
-            </a>
-        </div>
+        <a href="index.html" class="header__logo">
+            <img src="assets/images/logo.png" alt="">
+            Portfolio
+        </a>
         <nav class="header__nav" id="headerNav">
-            <a href="#about" class="active">About</a>
+            <a href="#about">About</a>
             <a href="#work">Work</a>
         </nav>
-        <button class="header__burger" id="headerBurger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <button class="header__burger" id="headerBurger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
 </header>
 
 <section class="hero" id="about">
-    <div class="hero__grid hero__grid--dense" aria-hidden="true"></div>
-    <div class="hero-image-wrapper">
-        <img src="assets/hero_shot.png" alt="Roshan Mohan" class="hero-image">
-    </div>
-    <div class="hero__label reveal">Roshan Mohan</div>
-    <h1 class="hero__title">
-        <span class="line">I love pushing the boundaries of what is considered feasible</span>
-    </h1>
-    <div class="hero__bottom">
-        <p class="hero__desc reveal">I'm currently a Sr Hardware Test Engineer at Tesla, previously a Sr Design Engineer at Nunam. Graduated from the Master of Design program at UC Berkeley. 
-            Currently this portfolio is under development, feel free to connect on LinkedIn.  </p>
-        <div class="hero__stats reveal" style="display: flex; gap: 20px;">
-            <a href="https://www.linkedin.com/in/roshan-mohan/" target="_blank" class="tag tag--filled" style="padding: 10px 20px;">LinkedIn</a>
-            <a href="assets/resume.pdf" target="_blank" class="tag tag--safety" style="padding: 10px 20px;">View Resume</a>
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="container hero__inner">
+        <img src="assets/images/hero_shot.png" alt="Roshan Mohan" class="hero__photo">
+        <div class="hero__label">Roshan Mohan</div>
+        <h1 class="hero__title">I love pushing the boundaries of what is considered feasible</h1>
+        <div class="hero__bottom">
+            <p class="hero__desc">I'm currently a Sr Hardware Test Engineer at Tesla, previously a Sr Design Engineer at Nunam. Graduated from the Master of Design program at UC Berkeley.</p>
+            <div class="hero__actions">
+                <a href="https://www.linkedin.com/in/roshan-mohan/" target="_blank" rel="noopener" class="tag tag--filled tag--btn">LinkedIn</a>
+                <a href="assets/docs/resume.pdf" target="_blank" class="tag tag--safety tag--btn">View Resume</a>
+            </div>
         </div>
     </div>
 </section>
@@ -67,36 +46,186 @@
 <section class="section" id="work">
     <div class="container">
         <div class="section__header reveal">
-            <h2 class="section__title">Selected Works</h2>
+            <h3 class="section__title">Selected Works</h3>
         </div>
-        <div class="bento__grid">
-            <div class="bento-card bento-card--wide reveal" onclick="this.classList.add('expanded')">
-                <div class="bento-card__number">01</div>
-                <div><h3 class="bento-card__title">Reimagining Manufacturing, Master's Thesis</h3><p class="bento-card__text">Click to expand, details coming soon.</p></div>
-                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
-            </div>
-            <div class="bento-card bento-card--mid reveal" onclick="this.classList.add('expanded')">
-                <div class="bento-card__number">02</div>
-                <div><h3 class="bento-card__title">Energy Storage Systems @ Nunam</h3><p class="bento-card__text">Click to expand. Detailed content coming soon</p></div>
-                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
-            </div>
-            <div class="bento-card bento-card--mid reveal" onclick="this.classList.add('expanded')">
-                <div class="bento-card__number">03</div>
-                <div><h3 class="bento-card__title">Respiraid</h3><p class="bento-card__text">Click to expand. Detailed content about coming soon.</p></div>
-                <button class="close-btn" onclick="event.stopPropagation(); this.parentElement.classList.remove('expanded')">Close</button>
-            </div>
+        <div class="work__grid">
+
+            <!-- WORK 01: THESIS -->
+            <article class="work-card work-card--wide reveal" tabindex="0" role="button" aria-label="Open project: How We May Make">
+                <div class="work-card__summary">
+                    <div>
+                        <h3 class="work-card__title">How We May Make | Master's Thesis</h3>
+                        <p class="work-card__text">A Vision for Producing Sustainable Hardware</p>
+                    </div>
+                    <img src="assets/images/thesis/thesis_images2.png" class="work-card__thumb" alt="">
+                </div>
+
+                <div class="work-card__detail">
+                    <button class="close-btn tag tag--safety">Close</button>
+
+                    <div class="popup-grid">
+                        <div class="popup-media">
+                            <!-- Add the YouTube video ID, then uncomment:
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_THESIS?rel=0&modestbranding=1" allowfullscreen></iframe>
+                            </div>
+                            -->
+                            <img src="assets/images/thesis/thesis_images2.png" class="popup-img popup-img--full" alt="Model A, a fully 3D-printed computer mouse with embedded electronics" loading="lazy">
+                            <img src="assets/images/thesis/thesis_images3.png" class="popup-img" alt="Model A opened up to show the electronics embedded inside the print" loading="lazy">
+                            <img src="assets/images/thesis/thesis_images1.png" class="popup-img" alt="Model A under blue light" loading="lazy">
+                            <img src="assets/images/thesis/thesis_images4.png" class="popup-img popup-img--full" alt="First test print with in-situ gallium-filled conductive path and HIAM copper conductor" loading="lazy">
+                            <img src="assets/images/thesis/thesis_images5.png" class="popup-img popup-img--full" alt="CAL printing test parts at the Nano Manufacturing Lab, Berkeley" loading="lazy">
+                        </div>
+
+                        <div class="popup-body">
+                            <h2>How We May Make</h2>
+                            <p class="tag tag--filled">Master of Design Thesis | UC Berkeley</p>
+
+                            <p>
+                                I set out to reimagine the design and production of consumer hardware to ensure resilience against climate change and supply chain disruptions. Moving away from high-emission global manufacturing, my research proposes a shift toward decentralized, super-local nano-factories where devices are fabricated on-demand.
+                            </p>
+
+                            <p> 
+                                Additive manufacturing has advanced to a point where we can now individually print polymers, metals, and ceramics, essentially all the core ingredients required to build hardware. This sparked a guiding question: <em>What if we could produce functional devices in a single-shot 3D print, eliminating the need for multi-part mass production and complex downstream assembly?</em>
+                            </p>
+
+                            <p>
+                                To test this vision, I needed a fabrication method capable of bypassing traditional layered printing constraints. Working closely with <a href="https://me.berkeley.edu/research-areas-and-major-fields/laboratories/design-for-nanomanufacturing/" target="_blank" rel="noopener" class="inline-link">UC Berkeley’s Nano Manufacturing Lab</a>, I explored Volumetric Additive Manufacturing, specifically Computed Axial Lithography to successfully embed conductive materials and electronics directly into components as they were printed.
+                            </p>
+
+                            <p>
+                                To demonstrate this workflow, I developed "Model A", a fully 3D-printed, ergonomically tailored computer mouse integrated with salvaged electronics. I designed this prototype to serve as a boundary object for sustainable hardware, illustrating how 3D space can transform traditional circuit routing and pave the way for generative design, biodegradable materials, and closed-loop recycling.
+                            </p>
+
+                            <div class="popup-links">
+                                <a href="https://design.berkeley.edu/studentworks/how-we-may-make" target="_blank" rel="noopener" class="tag tag--safety tag--btn">Learn more</a>
+                                <a href="assets/docs/thesis.pdf" target="_blank" class="tag tag--filled tag--btn">Download Full Thesis PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WORK 02: NUNAM -->
+            <article class="work-card reveal" tabindex="0" role="button" aria-label="Open project: Energy Storage Systems at Nunam">
+                <div class="work-card__summary">
+                    <div>
+                        <h3 class="work-card__title">Energy Storage Systems @ Nunam</h3>
+                        <p class="work-card__text">BESS Platforms, Second-Life Innovation &amp; Client Projects</p>
+                    </div>
+                    <img src="assets/images/nunam/thumb.jpg" class="work-card__thumb" alt="">
+                </div>
+
+                <div class="work-card__detail">
+                    <button class="close-btn tag tag--safety">Close</button>
+
+                    <div class="popup-grid">
+                        <div class="popup-media">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/9XdsboJ6wTw?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <img src="assets/images/nunam/grid_1.jpg" class="popup-img" alt="BESS Architecture">
+                            <img src="assets/images/nunam/grid_2.jpg" class="popup-img" alt="Client Deployments">
+                        </div>
+
+                        <div class="popup-body">
+                            <h2>Energy Storage Systems @ Nunam</h2>
+
+                            <p class="lead-text">
+                                I led the mechanical design and scaling for 2 BESS platforms using second-life lithium-ion batteries. I also worked on multiple projects for major enterprise clients including <strong>Audi</strong>, <strong>Asahi Kasei Corporation</strong>, and <strong>Tata Motors</strong>.
+                            </p>
+
+                            <h3>Core Platforms &amp; Deliverables</h3>
+
+                            <h4>// NESS Series 5 | Modular Energy Storage</h4>
+                            <p>Designed a scalable, 48V modular architecture optimizing high-current interconnect durability and thermal stability. Configured for rapid vertical stacking (5 kWh to 50 kWh) in space-constrained commercial UPS and residential environments.</p>
+
+                            <h4>// E-Rickshaw Battery Pack (for Audi)</h4>
+                            <p>Engineered a structural, ruggedized battery pack using repurposed Audi e-tron VDA modules. Optimized mechanical volume and structural load paths to endure high-frequency vibrations and extreme 40°C+ environments typical of Indian infrastructure.</p>
+
+                            <h4>// Portable Power Banks for Street Vendors (for Audi)</h4>
+                            <p>Developed mobile, second-life energy storage units designed to replace hazardous small-scale fossil fuel generators. Focused on ruggedization, intuitive user interfaces, and modular servicing for micro-entrepreneurs in outdoor environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WORK 03: RESPIRAID -->
+            <article class="work-card reveal" tabindex="0" role="button" aria-label="Open project: RespirAID">
+                <div class="work-card__summary">
+                    <div>
+                        <h3 class="work-card__title">RespirAID | Automated CMV Resuscitator</h3>
+                        <p class="work-card__text">MedTech • Oct 2017 - Apr 2019</p>
+                    </div>
+                    <img src="assets/images/respiraid/in_use.jpg" class="work-card__thumb" alt="">
+                </div>
+
+                <div class="work-card__detail">
+                    <button class="close-btn tag tag--safety">Close</button>
+
+                    <div class="popup-grid">
+                        <div class="popup-media">
+                            <figure class="popup-figure">
+                                <img src="assets/images/respiraid/manual_bagging.jpg" class="popup-img popup-img--full" alt="A child being manually ventilated with a resuscitator bag" loading="lazy">
+                                <figcaption>A child being manually ventilated while waiting for the next available ventilator</figcaption>
+                            </figure>
+                            <div class="video-wrapper">
+                                <video src="assets/images/respiraid/demo.mp4" poster="assets/images/respiraid/demo_poster.jpg" controls preload="none" playsinline></video>
+                            </div>
+                            <img src="assets/images/respiraid/in_use.jpg" class="popup-img popup-img--full" alt="RespirAID ventilating a patient at a hospital bedside" loading="lazy">
+                            <img src="assets/images/respiraid/product.png" class="popup-img popup-img--full popup-img--contain popup-img--boxed" alt="RespirAID mounted on its mobile stand with battery backup" loading="lazy">
+                            <figure class="popup-figure">
+                                <img src="assets/images/respiraid/development.png" class="popup-img popup-img--full" alt="RespirAID prototyping and development, from early mechanisms to the final design" loading="lazy">
+                                <figcaption>Stages in product development</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="popup-body">
+                            <h2>RespirAID | Automated CMV Resuscitator</h2>
+                            <p class="tag tag--filled">Mechanical Design Engineer | Biodesign Innovation Labs | Oct 2017 - Apr 2019</p>
+
+                            <p>
+                                Hospitals in resource-limited settings often lack ventilators and the trained staff to run them. Visiting over 100 hospitals across India, the team saw patients being kept alive with manual resuscitator bags (MRBs) while they waited for equipment, leading to inconsistent ventilation, lung trauma and preventable deaths.
+                            </p>
+
+                            <p class="lead-text">
+                                RespirAID is an automated Continuous Mandatory Ventilation (CMV) solution designed specifically for these settings. It works in conjunction with readily available MRBs, eliminating the need for additional specialized equipment and making it far easier to deploy where resources are constrained.
+                            </p>
+
+                            <p>
+                                Through a combination of proximity sensors, compression force feedback, and airway sensor data, RespirAID ensures controlled and consistent ventilation regardless of the specific MRB model used. Its compact size and compatibility with various MRBs make it suitable for a wide range of settings, including ambulances, remote clinics, and crowded hospitals.
+                            </p>
+
+                            <p>
+                                As the design engineer, I took the product from zero to one: designing, prototyping, and validating the mechanical design and motor drive system behind RespirAID. I also contributed to the engineering validation process before the first patient trials.
+                            </p>
+
+                            <p>
+                                RespirAID has demonstrably improved patient care. With over 800 lives positively impacted in over 45 hospitals across India, the device has shown significant promise in reducing complications and improving survival rates, particularly for post-operative patients during weaning from ventilation. In 2021, it won the Pandemic Response Prize at the Cisco Global Problem Solver Challenge.
+                            </p>
+
+                            <ul class="popup-refs">
+                                <li><a href="https://blogs.cisco.com/csr/biodesign-innovation-labs-meet-the-team-developing-an-affordable-alternative-for-prolonged-manual-ventilation" target="_blank" rel="noopener" class="inline-link">Featured on the Cisco Blog ↗</a></li>
+                                <li><a href="https://www.forbesindia.com/article/healthtech-special/covid19-ventilators-made-inand-forindia/69329/1" target="_blank" rel="noopener" class="inline-link">Featured in Forbes India ↗</a></li>
+                                <li><a href="https://www.wevolver.com/article/a.note.to.the.amazing.maker.community.trying.to.put.together.a.diy.mechanical.ventilator" target="_blank" rel="noopener" class="inline-link">My article about DIY ventilators for COVID in Wevolver ↗</a></li>
+                                <li><a href="assets/docs/respiraid_patent_US20200261672A1.pdf" target="_blank" class="inline-link">Patent US20200261672A1 (PDF) ↗</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>
 
 <footer class="footer">
     <div class="footer__inner">
-        <div class="footer__bottom">
-            <span class="footer__copy">&copy; 2026 Roshan Mohan.</span>
-        </div>
+        <span>&copy; 2026 Roshan Mohan.</span>
+        <a href="https://www.linkedin.com/in/roshan-mohan/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 </footer>
 
-<script src="js/templatemo-axis-script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
