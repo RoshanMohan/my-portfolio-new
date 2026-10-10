@@ -413,6 +413,13 @@ h1, h2, h3, h4 {
 }
 
 
+.section__subtitle {
+    margin-top: 0.75rem;
+    font-size: var(--fs-data);
+    opacity: 0.6;
+}
+
+
 /* ----- 7. WORK CARDS ----- */
 .work__grid {
     display: grid;
@@ -671,6 +678,81 @@ h1, h2, h3, h4 {
     height: auto;
     border: 1px solid var(--hair);
     background: var(--surface);
+}
+
+
+/* ----- BOOKMARKS ----- */
+.bookmarks__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bookmarks__filter {
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.bookmarks__filter:hover { border-color: var(--safety); }
+
+.bookmarks__filter.is-active {
+    background: var(--ink);
+    color: var(--base);
+}
+
+.bookmarks__status {
+    font-size: var(--fs-data);
+    opacity: 0.6;
+}
+
+.bookmarks__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: var(--gap);
+}
+
+.bookmark__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    height: 100%;
+    padding: 1.25rem;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    background: var(--base);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.bookmark__link:hover,
+.bookmark__link:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+    outline: none;
+}
+
+.bookmark__type { align-self: flex-start; }
+
+.bookmark__title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+.bookmark__arrow { color: var(--safety); }
+
+.bookmark__note {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    opacity: 0.75;
+}
+
+.bookmark__meta {
+    margin-top: auto;
+    font-size: 0.7rem;
+    opacity: 0.5;
 }
 
 

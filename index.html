@@ -22,6 +22,7 @@
         <nav class="header__nav" id="headerNav">
             <a href="#about">About</a>
             <a href="#work">Work</a>
+            <a href="#bookmarks">Bookmarks</a>
         </nav>
         <button class="header__burger" id="headerBurger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -288,6 +289,18 @@
     </div>
 </section>
 
+<section class="section" id="bookmarks">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__title">My Personal Bookmarks</h2>
+            <p class="section__subtitle">Great Engineering Resources from the World Wide Web</p>
+        </div>
+        <div class="bookmarks__filters" id="bookmarkFilters" hidden></div>
+        <p class="bookmarks__status" id="bookmarkStatus">Loading bookmarks…</p>
+        <ul class="bookmarks__grid" id="bookmarkList"></ul>
+    </div>
+</section>
+
 <footer class="footer">
     <div class="footer__inner">
         <span>&copy; 2026 Roshan Mohan.</span>
@@ -296,5 +309,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/bookmarks.js"></script>
 </body>
 </html>
